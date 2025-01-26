@@ -1,9 +1,18 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
- #全てのコントローラに対する処理を行える権限を持つ、ApplicationControllerに記述する
+
+  def after_sign_in_path_for(resource)
+    root_path #about_pathにするとネームエラーが起きる
+  end
+
+  def after_sign_out_path_for(resource)
+    root_path #about_pathにするとネームエラーが起きる
+  end
+
   protected
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
+
 end
