@@ -12,6 +12,8 @@ class BooksController < ApplicationController
   end
 
   def show
+    @book = Book.find(1)
+    #@book = Book.find(params[:id]) Couldn't find Book with 'id'=show
   end
 
   def index
