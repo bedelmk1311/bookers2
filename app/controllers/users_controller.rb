@@ -1,9 +1,7 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find(1) #params[:id]
+    @user = User.find(params[:id])
     @books = @user.books
-    # @userに関連付けられた投稿全てを取得、渡す 
-
   end
 
   def edit
