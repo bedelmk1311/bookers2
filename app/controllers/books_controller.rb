@@ -30,10 +30,18 @@ class BooksController < ApplicationController
   end
 
   def edit
+    @book = Book.find(params[:id])
   end
   
-   # 投稿データのストロングパラメータ
-   # 未編集 とりあえずで
+  def update
+    @book = Book.find(params[:id])
+    if @book.update(book_params)
+      redirect_to book_path(@book.id)
+    else
+      render :edit
+    end
+  end
+  # 投稿データのストロングパラメータ　多分あってるはず
    private
 
    def book_params
