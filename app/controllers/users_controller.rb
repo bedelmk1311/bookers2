@@ -1,15 +1,12 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find(params[:id])
-     # データ（レコード）を1件取得
+    @user = User.find(1) #params[:id]
     @books = @user.books
-    #特定のユーザ（@user）に関連付けられた投稿全て（.post_images）を取得,@post_imagesに渡す 
+    # @userに関連付けられた投稿全てを取得、渡す 
 
   end
 
   def edit
-    #@book = Book.new
-    #@books = Book.all
     @user = User.find(params[:id])
   end
 
