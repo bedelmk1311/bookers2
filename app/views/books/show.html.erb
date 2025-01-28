@@ -1,13 +1,17 @@
+<div>
+  <%= flash[:notice] %>
+</div>
+
 <h1>仮Book detail</h1>
 <div>
   <p>投稿ユーザー画像：<%= image_tag @book.user.get_profile_image(100,100) %></p>
-  <p>ユーザーネーム：<%= @book.user.name %></p>
+  <p>ユーザーネーム：<%= @book.user.id %></p>
   <!--<%= image_tag @book.get_image %>-->
   
   <p>説明：<%= @book.title %></p>
   <!--<p>投稿日：<%= @book.created_at.strftime('%Y/%m/%d') %></p>-->
 
-  <% if @book.user == current_user.id %>
+  <% if @book.user.id == current_user.id %>
     <%= link_to "Destroy", book_path(@book), method: :delete %>
   <% end %>
 
