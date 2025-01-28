@@ -1,15 +1,24 @@
 <h1>Books</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Opinion</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-  </tbody>
-</table>
-
- <%= render 'list', books: @books %>
+<div class="container"> 
+  <div class="row" style="background-color: #b6e7ff ;">
+    <div class="col-md-3" style="background-color: orange;">
+      <h2>サイドバー</h2>
+    </div>
+    <div class="col-md-8 offset-md-1" style="background-color: #ff00ff ;">
+      <table class="">
+        <thead>
+         <tr>
+          <th>Title</th>
+          <th>Opinion</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+    <br>
+    <%= link_to '丸っこい仮ボタン', new_book_path, class: "btn btn-secondary" %>
+    <%= render 'list', books: @books %> 
+  </div>
+</div>
