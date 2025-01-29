@@ -11,3 +11,14 @@
 </div>
 
 <%= render 'books/list', books: @books %>
+
+<% @users.each do |user| %>
+  <div>
+    <td>ユーザーネーム<%= user.name %></td>
+    <td>name<%= user.name %></td>
+    <td>introduction<%= user.introduction %></td>
+    <td>
+      <%= link_to "Edit" , edit_user_path(user.id) %>
+    </td>
+  </div>
+ <% end %>

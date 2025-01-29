@@ -6,9 +6,17 @@
   <div class="row" style="background-color: #b6e7ff ;">
     <div class="col-md-3" style="background-color: orange;">
       
-      <h1>仮User info</h1>
+      <h1>User info</h1>
       <div>
-         <%= render 'books/list', books: @books %>
+          <div>
+             <tr>仮ユーザー画像</tr>
+             <tr>ユーザーネーム<%= @user.name %></tr>
+             <tr>name<%= @user.name %></tr>
+             <tr>introduction<%= @user.introduction %></tr>
+             <tr>
+               <p><%= link_to "Edit" , edit_user_path(@user.id), class: "btn btn-secondary"  %></p>
+             </tr>
+         </div>
       </div>
       
 
