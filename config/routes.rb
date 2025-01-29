@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users #devise を使用する際に URL として users を含むことを示しています。
+  devise_for :users 
   root to: "homes#top"
   resources :books
   resources :users
