@@ -1,24 +1,11 @@
-<h1>仮User info indexに移動</h1>
-
-<!-- ユーザーの詳細 -->
+<h1>仮User info #show</h1>
 <div>
   <%= image_tag @user.get_profile_image(100,100) %>
-  <h3>name <%= @user.name %></h3>
-  <h3>仮introduction <%= @user.introduction%></h3>
+  <h3>name</h3>
+  <p><%= @user.name %></p>
+  <h3>introduction</h3>
+  <p> <%= @user.introduction%></p>
   <% if @user.id ==  current_user.id %>
-    <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+    <p><%= link_to "Edir", edit_user_path(@user) %></p>
   <% end %>
 </div>
-
-<%= render 'books/list', books: @books %>
-
-<% @users.each do |user| %>
-  <div>
-    <td>ユーザーネーム<%= user.name %></td>
-    <td>name<%= user.name %></td>
-    <td>introduction<%= user.introduction %></td>
-    <td>
-      <%= link_to "Edit" , edit_user_path(user.id) %>
-    </td>
-  </div>
- <% end %>

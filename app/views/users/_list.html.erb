@@ -1,11 +1,16 @@
 
 <% @users.each do |user| %>
   <div>
-    <td>ユーザーネーム<%= user.name %></td>
-    <td>name<%= user.name %></td>
-    <td>introduction<%= user.introduction %></td>
-    <td>
-      <%= link_to "Edit" , edit_user_path(user.id) %>
-    </td>
-  </div>
+      <h1>仮User info #show</h1>
+      <div>
+          <div>
+             <%= image_tag @user.get_profile_image(100,100) %>
+             <tr><h3>name</h3><p><%= @user.name %></p></tr>
+             
+             <tr><h3>introduction</h3><p> <%= @user.introduction%></p></tr>
+             <tr>
+               <p><%= link_to "Edir", edit_user_path(@user), class: "btn btn-secondary"  %></p>
+             </tr>
+         </div>
+      </div>
  <% end %>
