@@ -1,16 +1,19 @@
+<div>
+      <h1>User info #_list</h1>
+      <%= image_tag @user.get_profile_image(100,100) %>
+      画像が出ない
+      <table class ="table table-striped">
+        <tr>
+          <th>name</th>
+          <th><%= @user.name %></th>
+        </tr>
+        <tr>
+          <th>introduction</th>
+          <th> <%= @user.introduction%></th>
+        </tr>
+      </table>
+      <% if @user.id ==  current_user.id %>
+        <p><%= link_to "Edit", edit_user_path(@user), class: "btn btn-secondary"  %></p>
+       <% end %>
+</div>
 
-<% @users.each do |user| %>
-  <div>
-      <h1>仮User info #show</h1>
-      <div>
-          <div>
-             <%= image_tag @user.get_profile_image(100,100) %>
-             <tr><h3>name</h3><p><%= @user.name %></p></tr>
-             
-             <tr><h3>introduction</h3><p> <%= @user.introduction%></p></tr>
-             <tr>
-               <p><%= link_to "Edir", edit_user_path(@user), class: "btn btn-secondary"  %></p>
-             </tr>
-         </div>
-      </div>
- <% end %>

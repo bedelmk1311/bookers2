@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     @users = User.all
     @book = Book.new
     @books = Book.all
+    @profile_image 
   end
 
   def edit
