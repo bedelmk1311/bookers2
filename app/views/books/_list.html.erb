@@ -1,20 +1,25 @@
 <!-- ユーザーの投稿一覧 -->
 <% @books.each do |book| %>
-  <div>
-        <td> 
-          <%= link_to book_path(book.id) do %>
-            <%= image_tag @user.get_profile_image(100,100) %>
-          <% end %>
-          <p>name: <%= book.user.name %></p>
-        </td>
-        
-        <td><%= book.title %></td>
-        <td><%= book.body %></td>
-        <td><%= link_to "Edit" , edit_book_path(book.id), class: "btn btn-secondary"  %></td>
-        <td>
-          <% if book.user.id == current_user.id %>
-            <%= link_to "Destroy", book_path(book), method: :delete , class: "btn btn-secondary"  %>
-            <% end %>
-        </td>
-  </div>
+  <table class="table table-striped">
+    <th> 
+     <%= link_to book_path(book.id) do %>
+        <%= image_tag @user.get_profile_image(100,100) %>
+     <% end %>
+     <p>name: <%= book.user.name %></p>
+    </th>
+    </th>
+      <td><%= book.title %></td>
+      <td><%= book.body %></td>
+    </th>
+    <th>
+      <%= link_to "Edit" , edit_book_path(book.id), class: "btn btn-secondary"  %>
+    </th>
+    <th>
+      <% if book.user.id == current_user.id %>
+         <%= link_to "Destroy", book_path(book), method: :delete , class: "btn btn-secondary"  %>
+      <% end %>
+    </th>
+  </table>
  <% end %>
+
+ 

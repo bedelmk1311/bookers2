@@ -4,19 +4,25 @@
 <div class="container"> 
   <div class="row" style="background-color: #b6e7ff ;">
     <div class="col-md-3" style="background-color: orange;">
-      <h1>User info</h1>
-      <div>
-          <div>
-             <tr><p><%= image_tag @user.get_profile_image(100,100) %></p></tr>
-             <tr>ユーザーネーム<%= @user.name %></tr>
-             <tr>name<%= @user.name %></tr>
-             <tr>introduction<%= @user.introduction %></tr>
-             <tr>
-               <p><%= link_to "Edit" , edit_user_path(@user.id), class: "btn btn-secondary"  %></p>
-             </tr>
-         </div>
-      </div>
-      <h1>New book</h1>
+      <h1>User info#index</h1>
+      <%= image_tag @user.get_profile_image(100,100) %>
+
+      <table class="table table-striped">
+         <tr>
+           <td>name</td>
+           <td><%= @user.name %></td>
+         </tr>
+         <tr>
+           <td>introduction</td>
+           <td><%= @user.introduction %></td>
+         </tr>
+       </table>
+      <p><%= link_to "Edit" , edit_user_path(@user.id), class: "btn btn-secondary"  %></p>
+
+
+
+
+      <h1>New book#index</h1>
       <% if @book.errors.any? %>
          <% if @book.errors.count == 1 %>
            <%= @book.errors.count %> error prohibited this obj from being saved:
@@ -40,18 +46,10 @@
       
     </div>
     <div class="col-md-8 offset-md-1" style="background-color: #ff00ff ;">
-      <table class="table table-striped">
-        <thead>
-         <tr>
-           <h4>Book detail</h4>
-          </tr>
-        </thead>
-        <tbody>
-          <td>
-            <%= render 'list', books: @books %> 
-          </td>
-        </tbody>
-      </table>
+      <h1>Books#_list</h1>
+      <div>
+        <%= render 'list', books: @books %> 
+      </div>
     </div>
   </div>
 </div>
