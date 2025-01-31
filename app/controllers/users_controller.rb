@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     @book = Book.new
     @books = Book.all
     @profile_image 
+    @user = User.find(1) #User.find(params[:id])
   end
 
   def edit
