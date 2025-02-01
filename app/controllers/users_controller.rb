@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :is_matching_login_user, only: [:edit, :update]
+  #コントローラーで各アクションを実行する前に実行したい処理を指定することができるメソッド
   
   def show
     @user = User.find(params[:id])
@@ -12,8 +13,8 @@ class UsersController < ApplicationController
     @users = User.all
     @book = Book.new
     @books = Book.all
-    @profile_image 
-    @user = User.find(1) #User.find(params[:id])
+    user = User.find(params[:id]) 
+    #User.find(params[:id])
   end
 
   def edit

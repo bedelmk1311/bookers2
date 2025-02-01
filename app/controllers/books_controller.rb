@@ -24,8 +24,8 @@ class BooksController < ApplicationController
   def index
     @book = Book.new
     @books = Book.all
-    @user = User.find(1) #User.find(params[:id])
-
+    @user = User.new
+    #@user = User.find(params[:id])
   end
 
   def destroy
