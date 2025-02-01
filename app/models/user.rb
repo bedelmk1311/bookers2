@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_one_attached :profile_image 
   ##profile_imageという名前でActiveStorageでプロフィール画像を保存
 
-  validates :name, length: { maximum: 20 } # minimum: 2,を本当は入れたい
+  validates :name, length: { minimum: 2, maximum: 20 } 
   validates :introduction, length: { maximum: 50 } 
   
 
