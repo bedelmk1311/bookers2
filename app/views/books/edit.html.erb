@@ -1,32 +1,33 @@
-<div>
-  <%= flash[:notice] %>
-</div>
+<div class >
+  <div>
+   <%= flash[:notice] %>
+  </div>
 
-<h1>Editing Book</h1>
+  <h1>Editing Book</h1>
 
-<% if @book.errors.any? %>
-   <% if @book.errors.count == 1 %>
-    <%= @book.errors.count %> error prohibited this obj from being saved:
-  <% else %>
-    <%= @book.errors.count %> errors prohibited this obj from being saved:
+  <% if @book.errors.any? %>
+     <% if @book.errors.count == 1 %>
+      <%= @book.errors.count %> error prohibited this obj from being saved:
+   <% else %>
+     <%= @book.errors.count %> errors prohibited this obj from being saved:
+   <% end %>
+   <ul>
+     <% @book.errors.full_messages.each do |message| %>
+       <li><%= message %></li>
+      <% end %>
+   </ul>
   <% end %>
-  <ul>
-    <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
 
-<%= form_with model: @book, url: book_path(@book.id), method: :patch do |f| %>
+  <%= form_with model: @book, url: book_path(@book.id), method: :patch do |f| %>
 
-  <p>Title</p>
-  <%= f.text_field :title %>
-  
-  <p>Opinion</p>
-  <%= f.text_area :body %>
-  
-  <p><%= f.submit 'Update Book' %></p>
-  <%= link_to "Show" , book_path(@book.id) %>
-  |
-  <a href ="/books" >Back</a>
-<% end %>
+    <p>Title</p>
+    <%= f.text_field :title %>
+    <p>Opinion</p>
+    <%= f.text_area :body %>
+    <p><%= f.submit 'Update Book', class: "btn btn-secondary"  %></p>
+
+    <%= link_to "Show" , book_path(@book.id) %>
+      |
+     <%= link_to "Back" , books_path %> 
+  <% end %>
+</div>

@@ -4,32 +4,18 @@
 
 <h1>仮User info#edit</h1>
 
-<% if @user.errors.any? %>
-   <% if @user.errors.count == 1 %>
-    <%= @user.errors.count %> error prohibited this obj from being saved:
-  <% else %>
-    <%= @user.errors.count %> errors prohibited this obj from being saved:
+<%= image_tag @user.get_profile_image(100,100) %>
+  <%= form_with model: @user, url: user_path(@user.id), method: :patch do |f| %>
+
+    <p>Name</p>
+    <%= f.text_field :name %>
+
+    <p>Profile Image</p>
+    <%= f.file_field :profile_image, accept: "image/*" %>
+
+    <p>Introduction</p>
+    <%= f.text_area :introduction %>
+
+   <p><%= f.submit 'Update User', class: "btn btn-secondary"  %></p>
+
   <% end %>
-  <ul>
-    <% @user.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
-
-<%= form_with model: @user do |f| %>
-  <label for="inputName">Name</label>
-  <p><%= f.text_field :name, autofocus: true, id:"inputName", placeholder:""%></p>
-
-  <p><label for="inputImage">Image</label></p>
-  <p><%= f.file_field :profile_image, placeholder: "プロフィール画像", accept: "image/*" %></p>
-
-  <label for="inputName">仮Introduction</label>
-  <p><%= f.text_field :introduction, autofocus: true, id:"inputName", placeholder:""%></p>
-  
-
-
-  <p><%= f.submit "Update User" %></p>
-
-  
-<% end %>
