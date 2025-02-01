@@ -4,12 +4,12 @@
       <table class="table table-striped">
          <tr>
            <td>name</td>
-           <td><%= @user.name %></td>
+           <td><%= current_user.name %></td>
          </tr>
          <tr>
            <td>introduction</td>
            <td><%= @user.introduction %></td>
          </tr>
        </table>
-      <p><%= link_to "Edit" , edit_user_path(@user.id), class: "btn btn-secondary"  %></p>
+      <p><%= link_to "Edit" , edit_user_path(current_user.id), class: "btn btn-secondary"  %></p>
 

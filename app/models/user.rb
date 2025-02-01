@@ -5,6 +5,7 @@ class User < ApplicationRecord
 
   has_many :books, dependent: :destroy
   has_one_attached :profile_image 
+  # 1人のユーザーが、たくさん N 投稿することができる 1:N
   ##profile_imageという名前でActiveStorageでプロフィール画像を保存
 
   validates :name, length: { minimum: 2, maximum: 20 } 
