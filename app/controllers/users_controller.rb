@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     @users = User.all
     @book = Book.new
     @books = Book.all
-    user = User.find(params[:id]) 
+    @user = User.find(1) 
     #User.find(params[:id])
   end
 
