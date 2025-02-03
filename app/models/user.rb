@@ -8,7 +8,8 @@ class User < ApplicationRecord
   # 1人のユーザーが、たくさん N 投稿することができる 1:N
   ##profile_imageという名前でActiveStorageでプロフィール画像を保存
 
-  validates :name, length: { minimum: 2, maximum: 20 } 
+  validates :name, length: { minimum: 2, maximum: 20 }
+   #validates :name, uniqueness, length: { minimum: 2, maximum: 20 }
   validates :introduction, length: { maximum: 50 } 
   
 
