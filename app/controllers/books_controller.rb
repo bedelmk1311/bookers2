@@ -11,7 +11,7 @@ class BooksController < ApplicationController
     @books = Book.all
     if @book.save
       flash[:notice] = "Book was successfully created."
-      redirect_to books_path(current_user.id) #テスト通らない
+      redirect_to books_path
     else
       render :index
     end
