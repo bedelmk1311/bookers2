@@ -20,7 +20,7 @@
 <div class="container"> 
   <div class="row" style="background-color: #b6e7ff ;">
     <div class="col-md-3" style="background-color: orange;">
-      <%= render 'list', books: @books %>
+      <%= render 'list', books: @books, user: current_user %>
       <%= render 'new', books: @books %>
     </div>
 
@@ -31,7 +31,7 @@
         <table class="table table-striped">
          <th> 
            <%= link_to book_path(book.id) do %>
-             <%= image_tag @user.get_profile_image(100,100) %>
+             <%= image_tag book.user.get_profile_image(100,100) %>
            <% end %>
            <p>name: <%= book.user.name %></p>
          </th>
