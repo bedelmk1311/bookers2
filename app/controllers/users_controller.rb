@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   #コントローラーで各アクションを実行する前に実行したい処理を指定することができるメソッド
   
   def show
-    @user = User.find(params[:id])
+    @user = current_user
     @books = @user.books
     @book = Book.new
   end
