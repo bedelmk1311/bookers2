@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     
   get '/home/about'=> 'homes#about', as: 'about'
   # HTTPメソッド 'URL' => 'コントローラ#アクション'
+  delete 'books', to: 'books#destroy'
 end
