@@ -17,13 +17,20 @@
             <td>Opinion</td>
           </tr>
          <th> 
-           <td><%= image_tag current_user.get_profile_image(100,100) %>
+           <td>
+           <%= link_to user_path(@user) do %>
+             <%= image_tag current_user.get_profile_image(100,100) %>
+           <% end %>
              <p><%= current_user.name %></p>
            </td>
          </th>
 
          <th>
-           <td><%= @book.title %></td>
+           <td>
+              <%= link_to book_path(@book) do %>
+                 <%= @book.title %>
+              <% end %>
+            </td>
            <td><%= @book.body %></td>
          </th>
          <th>
