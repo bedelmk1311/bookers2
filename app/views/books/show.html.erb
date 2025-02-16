@@ -11,17 +11,15 @@
      <div class="col-md-8 offset-md-1" style="background-color: #ff00ff ;">
       <h1>Book detail#show</h1>
         <table class="table table-striped">
-          <tr>
-            <td>Image</td>
-            <td>Title</td>
-            <td>Opinion</td>
-          </tr>
          <th> 
            <td>
            <%= link_to user_path(@user) do %>
              <%= image_tag current_user.get_profile_image(100,100) %>
            <% end %>
+
+           <%= link_to user_path(@user) do %>
              <p><%= current_user.name %></p>
+           <% end %>
            </td>
          </th>
 
