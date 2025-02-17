@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
   before_action :is_matching_login_user, only: [:edit, :update]
   #コントローラーで各アクションを実行する前に実行したい処理を指定することができるメソッド
-  
+  before_action :authenticate_user!
+
+
   def show
     @user = current_user
     @books = @user.books
