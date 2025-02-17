@@ -2,6 +2,17 @@
   <%= flash[:notice] %>
 </div>
 
+<% if @user.errors.any? %>
+   <% if @user.errors.count == 1 %>
+    <%= @user.errors.count %> error prohibited this obj from being saved:
+  <% end %>
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <div class=" col-md-8 mx-auto" style="background-color: orange;">
   <h1>User info#edit</h1>
 
