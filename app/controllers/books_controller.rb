@@ -25,7 +25,7 @@ class BooksController < ApplicationController
   def index
     @book = Book.new
     @books = Book.all
-    #@user = current_user いらない気がする
+    @user = current_user #_list用　view側でcurrent_userでも可
   end
 
   def destroy
