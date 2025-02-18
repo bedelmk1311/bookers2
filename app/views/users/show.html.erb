@@ -4,14 +4,12 @@
 <div class="container"> 
   <div class="row" style="background-color: #b6e7ff ;">
      <div class="col-md-3" style="background-color: orange;">
-        <%= render 'books/list', books: @books, user: current_user %>
+        <%= render 'books/list', user: current_user %>
         <%= render 'books/new', book_new: @book %>
      </div>
 
      <div class="col-md-8 offset-md-1" style="background-color: #ff00ff ;">
       <h1>Books#users/show</h1>
-
-
         <table class="table table-striped">
           <tr>
             <td>Image</td>
@@ -22,8 +20,8 @@
             <tr>
                <td>
                <%= link_to user_path(@user) do %>
-                 <%= image_tag @user.get_profile_image(100,100) %>
-                 <p><%= @user.name %></p>
+                 <%= image_tag @user_find.get_profile_image(100,100) %>
+                 <p><%= @user_find.name %></p>
                <% end %>
                </td>
 
@@ -36,9 +34,6 @@
 
           <% end %>
          </table>
-
-
-
   </div>
 </div>
 

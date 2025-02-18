@@ -4,9 +4,10 @@ class UsersController < ApplicationController
   #コントローラーで各アクションを実行する前に実行したい処理を指定することができるメソッド
 
   def show
-    @user = current_user
-    @books = @user.books
     @book = Book.new
+    @user = current_user
+    @user_find = User.find(params[:id])
+    @books = @user_find.books
   end
 
   def index
@@ -39,7 +40,7 @@ class UsersController < ApplicationController
   def is_matching_login_user
     user = User.find(params[:id])
     unless user.id == current_user.id
-      redirect_to books_path
+      redirect_to user_path(params[:id])
     end
   end
   
