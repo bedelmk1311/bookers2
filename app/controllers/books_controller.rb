@@ -3,11 +3,10 @@ class BooksController < ApplicationController
     @book = Book.new
   end
 
-  # 投稿データの保存
   def create
     @book = Book.new(book_params)
     @book.user_id = current_user.id
-    
+    @books = Book.all
     
     if @book.save
       flash[:notice] = "Book was successfully created."
@@ -26,7 +25,7 @@ class BooksController < ApplicationController
   def index
     @book = Book.new
     @books = Book.all
-    @user = current_user
+    #@user = current_user いらない気がする
   end
 
   def destroy
