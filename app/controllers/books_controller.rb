@@ -48,7 +48,7 @@ class BooksController < ApplicationController
       render :edit
     end
   end
-  # 投稿データのストロングパラメータ　多分あってるはず
+
    private
 
    def book_params
