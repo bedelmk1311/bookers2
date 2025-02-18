@@ -14,7 +14,7 @@
 <% end %>
 
 <div class=" col-md-8 mx-auto" style="background-color: orange;">
-  <h1>User info#edit</h1>
+  <h1>User info</h1>
 
   <%= image_tag @user.get_profile_image(100,100) %>
   <%= form_with model: @user, url: user_path(@user.id), method: :patch do |f| %>
