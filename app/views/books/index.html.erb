@@ -26,15 +26,15 @@
     <div class="col-md-8 offset-md-1">
       <h1>Books</h1>
       <div>
-        <% @books.each do |book| %>
         <table class="table table-striped">
+        <% @books.each do |book| %>
+         <tr>
          <th> 
            <%= link_to user_path(book.user) do %>
              <%= image_tag book.user.get_profile_image(100,100) %>
            <% end %>
            <p>name: <%= book.user.name %></p>
          </th>
-
          <th>
            <td>
              <%= link_to book_path(book) do %>
@@ -43,14 +43,9 @@
            </td>
            <td><%= book.body %></td>
          </th>
-         <th>
-
-         </th>
-         <th>
-
-         </th>
-       </table>
+         </tr>
        <% end %>
+       </table>
       </div>
 
     </div>
