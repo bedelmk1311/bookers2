@@ -3,14 +3,13 @@
 </div>
 
 <div class="containter">
-  <div class="row mx-auto">
+  <div class="row col-8 mx-auto">
     <h1>welcome to <i class="fa-solid fa-book"></i>Bookers !!</h1>
     <p>In Bookers,you can share and exchange your opinions , inpressions , and emotions about various books!</p> 
-  </div>
-  <div class="btn-wrapper col-4 mx-auto">
-    <div class="row">
+
+    <div class="btn-wrapper col-10 mx-auto">
       <%= link_to "Log in" , new_user_session_path, class: "btn btn-secondary btn btn-info btn-sm btn-block mb-3"  %>
-      <%= link_to "Sign up" , new_user_registration_path, class: "btn btn-success btn-sm btn-block sign_up btn-block mb-3"  %>
+      <%= link_to "Sign up" , new_user_registration_path, class: "btn btn-success btn-sm btn-block sign_up btn-block mb-3" %>
     </div>
   </div>
 </div>
