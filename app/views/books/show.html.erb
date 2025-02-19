@@ -32,12 +32,14 @@
            <td><%= @book.body %></td>
          </th>
          <th>
-          <%= link_to "Edit" , edit_book_path(@book.id), class: "btn btn-secondary"  %>
+          <% if @user == current_user %>
+            <%= link_to "Edit" , edit_book_path(@book.id), class: "btn btn-secondary"  %>
+          <% end %>
          </th>
          <th>
-
+          <% if @user == current_user %>
              <%= link_to "Destroy", book_path(@book.id), method: :delete, class: "btn btn-secondary" %>
-
+          <% end %>
           </th>
 
        </table>
