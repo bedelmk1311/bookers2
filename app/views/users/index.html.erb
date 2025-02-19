@@ -2,13 +2,13 @@
   <%= flash[:notice] %>
 </div>
 <div class="container"> 
-  <div class="row" style="background-color: #b6e7ff ;">
-     <div class="col-md-3" style="background-color: orange;">
+  <div class="row" >
+     <div class="col-md-3" >
         <%= render 'books/list', books: @books, user: current_user %>
         <%= render 'books/new', book_new: @book %>
      </div>
 
-     <div class="col-md-8 offset-md-1" style="background-color: #ff00ff ;">
+     <div class="col-md-8 offset-md-1">
       <h1>Users</h1>
       <div>
         <table class="table table-striped">
