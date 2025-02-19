@@ -11,8 +11,9 @@
      <div class="col-md-8 offset-md-1" style="background-color: #ff00ff ;">
       <h1>Users</h1>
       <div>
-        <% @users.each do |user| %>
         <table class="table table-striped">
+        <% @users.each do |user| %>
+         <tr>
          <th> 
            <%= link_to user_path(user.id) do %>
              <%= image_tag user.get_profile_image(100,100) %>
@@ -27,8 +28,9 @@
          <th>
           <%= link_to "Show" , user_path(user.id), class: "btn btn-secondary"  %>
          </th>
-       </table>
+         </tr>
        <% end %>
+       </table>
       </div>
 
   </div>
